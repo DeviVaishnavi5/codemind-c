@@ -1,22 +1,29 @@
 #include<stdio.h>
+
 int main()
+
 {
-    int n,m,t,i;
-    scanf("%d%d",&n,&m);
-    if(n<m)
-    {
-        t=m;
-    }
-    else
-    {
-        t=n;
-    }
-    for(i=1;i<t;i++)
-    {
-        if(i*t%n==0 && i*t%m==0)
-        {
-            printf("%d",i*t);
-            break;
-        }
-    }
+
+int a,b,i,c;
+
+scanf("%d%d",&a,&b);
+
+for(i=1;i<=b;i++)
+
+{
+
+c=a*i;
+
+if(c%b==0)
+
+{
+
+printf("%d",c);
+
+break;
+
+}
+
+}
+
 }
