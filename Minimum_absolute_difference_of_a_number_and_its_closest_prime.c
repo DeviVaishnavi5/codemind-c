@@ -1,11 +1,19 @@
 #include<stdio.h>
+
 int main()
+
 {
+
     int n,i,j,k,np,sp,c=0,d,e;
+
     scanf("%d",&n);
+
     for(j=n;j>=n-10;j--)
+
     {
+
         c=0;
+
         for(k=1;k<=j;k++)
         {
             if(j%k==0)
@@ -32,6 +40,7 @@ int main()
         }
         if(c==2)
         {
+
             sp=j;
             e=sp-n;
             break;
@@ -39,7 +48,8 @@ int main()
     }
     if(d<e || d==e)
     {
-        printf("%d",d);
+       printf("%d",d);
+
     }
     else
     {
