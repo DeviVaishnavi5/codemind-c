@@ -13,7 +13,6 @@ int main()
     }
     for(j=i-1;j>=0;j--)
     {
-      
         {
             if(a[j]==6)
             {
