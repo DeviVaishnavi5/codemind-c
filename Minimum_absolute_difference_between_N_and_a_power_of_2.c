@@ -1,39 +1,43 @@
 #include<stdio.h>
-#include<math.h>
+
 int main()
+
 {
-    int n,i,np,sp,d,e,mp,cp;
-    scanf("%d",&n);//n=50
-    np=0;
-    for(i=1;np<n;i++)//i=6,32<50
+
+    int n,lp=2,rp=2;
+
+    scanf("%d",&n);
+
+    while(lp*2<=n)
+
     {
-        np=pow(2,i);//np=64
-        if(np<=n)//64<=50
-        {
-             cp=np;	//cp=32
-		}
+
+        lp*=2;
+
     }
-    d=n-cp;//d=50-32=18
-    sp=n+30;//sp=6
-    mp=sp;
-    while(mp>n)
+
+    while(rp<=n)
+
     {
-        for(i=1;pow(2,i)<=n+30;i++)
-        {
-            if(mp==pow(2,i))
-            {
-                sp=mp;
-            }
-        }
-        mp--;
+
+        rp*=2;
+
     }
-    e=sp-n;
-    if(d<e)
+
+    if(n-lp<rp-n)
+
     {
-        printf("%d",d);
+
+        printf("%d",n-lp);
+
     }
+
     else
+
     {
-        printf("%d",e);
+
+        printf("%d",rp-n);
+
     }
+
 }
