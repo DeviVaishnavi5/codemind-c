@@ -1,27 +1,42 @@
 #include<stdio.h>
+
 int main()
+
 {
-    int t,m,n,fl;
-    scanf("%d",&t);
-    while(t--)
+
+    long long int t,a,b,i,n;
+
+    scanf("%lld",&t);
+
+    while(t>0)
+
     {
-        scanf("%d%d",&n,&m);
-        fl=0;
-        for(int i=0;i<=m;i++)
+
+        scanf("%lld %lld",&a,&b);
+
+        n=-1;
+
+        for(i=0;i<=b;i++)
+
         {
-            long int temp=(long int)i*i;
-            if(temp%m==n)
+
+            if((i*i)%b==a)
+
             {
-                printf("%d
-",i);
-                fl=1;
+
+                n=i;
+
                 break;
+
             }
+
         }
-        if(fl==0)
-        {
-            printf("-1
-");
-        }
+
+        printf("%lld
+",n);
+
+        t--;
+
     }
+
 }
