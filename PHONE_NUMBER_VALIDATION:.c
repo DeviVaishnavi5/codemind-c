@@ -1,14 +1,35 @@
 #include<stdio.h>
+
 int main()
+
 {
-    long long n;
-    scanf("%lld",&n);
-    if(n>999999999 and n<=9999999999)
+
+    long int d,rev,n,r,c=0;
+
+    scanf("%ld",&n);
+
+    while(n)
+
     {
-        printf("Valid");
+
+        d=n%10;
+
+        rev=rev*10+d;
+
+        c++;
+
+        n=n/10;
+
     }
+
+    if(c==10 && rev%10!=0)
+
+    printf("Valid");
+
     else
-    {
-        printf("Invalid");
-    }
+
+    printf("Invalid");
+
+    return 0;
+
 }
