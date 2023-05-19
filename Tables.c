@@ -1,15 +1,17 @@
 #include<stdio.h>
 int main()
 {
-    int n,l,a;
+    int a,b,m,n;
+    scanf("%d",&b);
     scanf("%d",&n);
-    scanf("%d",&l);
-    for(a=1;a<=l;a++)
+    for(a=1;a<=n;a++)
     {
-        if(a%2!=0)
+        if(a%2==1)
         {
-        printf("%d x %d = %d
-",n,a,n*a);
+            m=b*a;
+            printf("%d x %d = %d
+",b,a,m);
         }
     }
+    return 0;
 }
