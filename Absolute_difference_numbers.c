@@ -1,29 +1,39 @@
-#include<stdio.h>
-int main()
+#include <stdio.h>
+#include<stdlib.h>
+long int digitsCount(int long n)
 {
-    int n,rev,zero=1;
-    long long number,last=0,r=0,first=0;
-    scanf("%lld%d",&number,&n);
-    rev=n;
-    while(rev)
+    int len = 0;
+    while (n > 0)
     {
-        zero=zero*10;
-        rev--;
+        len++;
+        n /= 10;
     }
-    last=number%zero;
-    while(number)
-    {
-        r=(r*10)+(number%10);
-        number/=10;
-    }
-    while(n)
-    {
-        first=(first*10)+(r%10);
-        r/=10;
-        n--;
-    }
-    if(first<last)
-    printf("%lld",last-first);
-    else
-    printf("%lld",first-last);
+    return len;
 }
+long int absoluteFirstLast(int long n, int x){
+    int i = 0, mod = 1;
+    while (i < x) 
+    {
+        mod *= 10;
+
+        i++;
+    }
+    int last = n % mod;
+    long int len = digitsCount(n);
+    while (len != x)
+    {
+        n /= 10;
+      len--;
+    }
+     int first = n;
+    return abs(first - last);
+}
+ int main()
+{
+    long int n , x ;
+    scanf("%ld%ld",&n,&x);
+   printf("%ld",absoluteFirstLast(n, x));
+    return 0;
+}
+
+ 
