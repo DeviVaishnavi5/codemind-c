@@ -1,24 +1,22 @@
 #include<stdio.h>
 int main()
 {
-	int i,a,b,x,y,hcf;
-	scanf("%d%d",&a,&b);
-	if(a>b)
-	{
-		x=a;
-		y=b;
-	}
-	else
-	{
-		x=b;
-		y=a;
-	}
-	for(i=1;i<=y;i++)
-	{
-		if(x%i==0 && y%i==0)
-		{
-			hcf=i;
-		}
-	}
-	printf("%d",hcf);
+    int n,m,i,t;
+    scanf("%d%d",&n,&m);
+    if(n<m)
+    {
+        t=n;
+    }
+    else
+    {
+        t=m;
+    }
+    for(i=t;i>=1;i--)
+    {
+        if(n%i==0 && m%i==0)
+        {
+            printf("%d",i);
+            break;
+        }
+    }
 }
