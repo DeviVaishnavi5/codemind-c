@@ -1,101 +1,60 @@
 #include<stdio.h>
-
 int main()
-
 {
-
-    int n,i,a,c=0,c1=0,r1,r2,k,min,max,j;
-
+    int n,i,arr[100],j,k,np,sp,c=0,d,e;
     scanf("%d",&n);
-
     for(i=0;i<n;i++)
-
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
     {
 
-        scanf("%d",&a);
-
-        for(j=a;j>=0;j--)
-
+        for(j=arr[i];j>=arr[i]-10;j--)
         {
-
-            c=0;
-
+        	c=0;
             for(k=1;k<=j;k++)
-
             {
-
                 if(j%k==0)
-
+                {
+                    c++;
+                }
+            }
+            if(c==2)
+            {
+                np=j;
+                d=arr[i]-np;
+                break;
+            }
+        }
+        for(j=arr[i];j<=arr[i]+10;j++)
+        {
+        	c=0;
+            for(k=1;k<=j;k++)
+            {
+                if(j%k==0)
                 {
 
                     c++;
-
                 }
-
             }
-
             if(c==2)
-
             {
-
-                min=j;
-
+                sp=j;
+                e=sp-arr[i];
                 break;
-
             }
-
         }
-
-        for(j=a;;j++)
-
+        if(d<e || d==e)
         {
-
-            c1=0;
-
-            for(k=1;k<=j;k++)
-
-            {
-
-                if(j%k==0)
-
-                {
-
-                    c1++;
-
-                }
-
-            }
-
-            if(c1==2)
-
-            {
-
-                max=j;
-
-                break;
-
-            }
-
+            printf("%d
+",np);
         }
-
-        r1=a-min;
-
-        r2=max-a;
-
-        if(r1<r2)
-
-        printf("%d
-",min);
-
-        else if(r1==r2)
-
-        printf("%d
-",min);
-
         else
-
-        printf("%d
-",max);
+        {
+            printf("%d
+",sp);
+        }
 
     }
 
