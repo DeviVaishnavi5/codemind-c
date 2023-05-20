@@ -31,6 +31,7 @@ int sort(int *v,int n)
         t=v[n-1]-v[0];
     }
     return t;
+
 }
 int main()
 {
