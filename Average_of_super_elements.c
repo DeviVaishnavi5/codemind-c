@@ -1,58 +1,40 @@
 #include<stdio.h>
-int main(){
-    int i,j,k,m=0,n;
+int main()
+{
+    int n;
     scanf("%d",&n);
-    int a[n],b[n],c[n];
-    for(i=0;i<n;i++){
-        c[i]=0;
-    }
+    int a[n],i,c,j;
+    float s=0,k=0;
     for(i=0;i<n;i++)
     {
-        scanf("%d",&a[i]);
+        scanf("%d",&a[i]);//1 2 3 4 5 6 2
     }
-    for(i=0;i<n;i++)
+    for(i=0;i<n;i++)//i=1<7
     {
-        k=0;
-        for(j=0;j<n;j++)
+        c=0;//c=0
+        for(j=0;j<n;j++)//j=0<7
         {
-            if(a[j]==a[i])
+            if(a[i]==a[j])//a[1]=a[0]
             {
-                k+=1;
-               // a[i]=-1;
+                c++;//c=1
+                if(i!=j)
+                {
+                	a[j]=0;
+				}
             }
-            
         }
-        //printf("%d",k);
-        if(k==a[i])
+        if(a[i]==c)//a[0]=1
         {
-            b[m++]=a[i];
+            s+=a[i];//s=1
+            k++;//k=1
         }
     }
-    float s=0;
-    for(i=0;i<m;i++){
-        for(j=0;j<n;j++){
-            if(b[i]==c[j]){
-                s+=1;
-            }
-        }
-        if(s==0){
-            c[i]=b[i];
-        }
-        else{
-            continue;
-        }
-    }
-    s=0;
-    int l=0;
-    for(i=0;i<n;i++){
-        if(c[i]!=0){
-            l++;
-        }
-        s+=c[i];
-    }
-    if(l!=0){
-        printf("%.2f",s/l);}
-    else{
+    if(k==0)
+    {
         printf("-1");
+    }
+    else
+    {
+        printf("%.2f",s/k);
     }
 }
